@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participant Registration Success</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        strong {
+            margin-right: 10px;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Participant Registration Successful</h2>
+    {% if participant %}
+    <p>Participant Details:</p>
+    <ul>
+        <li><strong>Email:</strong> {{ participant.email }}</li>
+        <li><strong>Last Name:</strong> {{ participant.last_name }}</li>
+        <li><strong>First Name:</strong> {{ participant.first_name }}</li>
+        <li><strong>Phone Number:</strong> {{ participant.phone_number }}</li>
+        <li><strong>Reference Number:</strong> {{ participant.reference_number }}</li>
+        <li><strong>Date of Birth:</strong> {{ participant.date_of_birth }}</li>
+    </ul>
+    {% endif %}
+    <p>Thank you for registering!</p>
+    <a href="{% url 'add_participant' %}"><button>Back to Register </button></a>
+
+
+
+</body>
+</html>
